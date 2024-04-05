@@ -12,13 +12,13 @@ signal led_array_signal: std_logic_vector(7 downto 0):= "00000000";
 signal array_part_one: std_logic_vector(3 downto 0):= "0000";
 signal array_part_two: std_logic_vector(3 downto 0):= "0000";
 signal current_state,next_state,next_state_after_wait:states;
-signal count: integer range 0 to 2 := 0;
+signal count: integer range 0 to 50000000 := 0;
 signal set: std_logic := '0';
 begin
 process(clk)  -- Clock division
 begin
 if rising_edge(clk) then
-    if count = 2 then
+    if count = 50000000 then
         count <= 0;
         set <= '1';
     else
